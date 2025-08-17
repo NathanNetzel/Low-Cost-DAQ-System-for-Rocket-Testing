@@ -47,7 +47,7 @@ Both PCBs work together to safely and accurately acquire thrust and chamber pres
 
 ## 🧭 **Block Diagram (Main DAQ Board)**
 
-![Block Diagram](images/Low_Cost_DAQ_Hardware_Diagram.png)
+![Block Diagram](Images/Low_Cost_DAQ_Hardware_Diagram.png)
 *Figure 1: Functional architecture of the main DAQ board, highlighting signal conditioning, communication, and microcontroller connections. Also featured in the [3rd Brazilian Aerospace Congress].*
 
 ---
@@ -56,7 +56,7 @@ Both PCBs work together to safely and accurately acquire thrust and chamber pres
 
 | Main DAQ Board (Top View)                                                                      | Main + Pressure Boards Assembled                                                                | Main Board (Bottom View)                                                                             |
 | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| ![DAQ Top](images/Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](images/Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](images/Low_Cost_DAQ_Bottom_Board.JPG)   |
+| ![DAQ Top](Images/Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](Images/Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](Images/Low_Cost_DAQ_Bottom_Board.JPG)   |
 
 > *Note: The blue pressure board is mounted on the green DAQ main board using a custom 3D-printed support*
 
@@ -116,7 +116,7 @@ Now, all critical tasks — data collection, igniter activation, and real-time m
 
 | Main DAQ Board (Top View) | Main DAQ Board (Bottom View) | Assembled with LCD + SD |
 |----------------------------|------------------------------|--------------------------|
-| ![DAQ Updated Top](images/DAQ_UPDATED_TOP.png) | ![DAQ Updated Bottom](images/DAQ_UPDATED_BOTTOM.png) | ![DAQ LCD](images/DAQ_UPDATED_DEFAULT.png) |
+| ![DAQ Updated Top](Images/DAQ_UPDATED_TOP.png) | ![DAQ Updated Bottom](Images/DAQ_UPDATED_BOTTOM.png) | ![DAQ LCD](Images/DAQ_UPDATED_DEFAULT.png) |
 
 ---
 
@@ -135,7 +135,7 @@ It operates from a **dedicated 30 V DC power supply** and uses **optical isolati
 
 | Igniter Board (Top View) | Igniter Board (Bottom View) | Installed with DAQ |
 |---------------------------|-----------------------------|--------------------|
-| ![Igniter Top](images/IGNITER_TOP.png) | ![Igniter Bottom](images/IGNITER_BOTTOM.png) | ![Igniter Assembled](images/IGNITER_DEFAULT.png) |
+| ![Igniter Top](Images/IGNITER_TOP.png) | ![Igniter Bottom](Images/IGNITER_BOTTOM.png) | ![Igniter Assembled](Images/IGNITER_DEFAULT.png) |
 
 ---
 
@@ -151,7 +151,7 @@ Each board is fed by its own transformer, ensuring electrical separation between
 
 | Power Board (Top View) | Power Board (Bottom View) | Installed Setup |
 |-------------------------|---------------------------|-----------------|
-| ![PSU Top](images/POWER_TOP.png) | ![PSU Bottom](images/POWER_BOTTOM.png) | ![PSU Assembled](images/POWER_DEFAULT.png) |
+| ![PSU Top](Images/POWER_TOP.png) | ![PSU Bottom](Images/POWER_BOTTOM.png) | ![PSU Assembled](Images/POWER_DEFAULT.png) |
 
 ---
 
