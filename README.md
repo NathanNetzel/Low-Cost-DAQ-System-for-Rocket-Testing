@@ -56,7 +56,7 @@ Both PCBs work together to safely and accurately acquire thrust and chamber pres
 
 | Main DAQ Board (Top View)                                                                      | Main + Pressure Boards Assembled                                                                | Main Board (Bottom View)                                                                             |
 | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| ![DAQ Top](Low_Cost_DAQ_Main_Board.png) | ![DAQ Stack](Low_Cost_DAQ_Pressure_Board.png) | ![DAQ Bottom](Low_Cost_DAQ_Bottom_Board.png)   |
+| ![DAQ Top](Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](Low_Cost_DAQ_Bottom_Board.JPG)   |
 
 > *Note: The blue pressure board is mounted on the green DAQ main board using a custom 3D-printed support*
 
@@ -135,7 +135,7 @@ It operates from a **dedicated 30 V DC power supply** and uses **optical isolati
 
 | Igniter Board (Top View) | Igniter Board (Bottom View) | Installed with DAQ |
 |---------------------------|-----------------------------|--------------------|
-| ![Igniter Top](Igniter_Top.png) | ![Igniter Bottom](Igniter_Bottom.png) | ![Igniter Assembled](Igniter_DEFAULT.png) |
+| ![Igniter Top](IGNITER_TOP.png) | ![Igniter Bottom](IGNITER_BOTTOM.png) | ![Igniter Assembled](IGNITER_DEFAULT.png) |
 
 ---
 
@@ -151,7 +151,7 @@ Each board is fed by its own transformer, ensuring electrical separation between
 
 | Power Board (Top View) | Power Board (Bottom View) | Installed Setup |
 |-------------------------|---------------------------|-----------------|
-| ![PSU Top](POWER_Top.png) | ![PSU Bottom](POWER_Bottom.png) | ![PSU Assembled](POWER_DEFAULT.png) |
+| ![PSU Top](POWER_TOP.png) | ![PSU Bottom](POWER_BOTTOM.png) | ![PSU Assembled](POWER_DEFAULT.png) |
 
 ---
 
