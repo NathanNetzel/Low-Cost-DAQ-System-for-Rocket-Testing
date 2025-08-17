@@ -91,7 +91,6 @@ While maintaining the same core architecture (STM32F373, load cell conditioning,
 The **main goal** of this updated version was to produce a **robust, fully standalone system**, capable of performing rocket motor tests **without requiring a PC or external serial interface**.  
 Now, all critical tasks — data collection, igniter activation, and real-time monitoring — can be carried out directly through the **user button, LCD display, SD card logging, LEDs, and buzzer signals**, providing greater autonomy, safety, and reliability during operations.  
 
--
 ---
 
 ## **New Features (Main DAQ Board)**
@@ -117,7 +116,7 @@ Now, all critical tasks — data collection, igniter activation, and real-time m
 
 | Main DAQ Board (Top View) | Main DAQ Board (Bottom View) | Assembled with LCD + SD |
 |----------------------------|------------------------------|--------------------------|
-| ![DAQ Updated Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/DAQ_Updated_Top.png) | ![DAQ Updated Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/DAQ_Updated_Bottom.png) | ![DAQ LCD](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/DAQ_LCD_SD.png) |
+| ![DAQ Updated Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/DAQ_UPDATED_TOP.png) | ![DAQ Updated Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/DAQ_UPDATED_BOTTOM.png) | ![DAQ LCD](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/DAQ_UPDATED_DEFAULT.png) |
 
 ---
 
@@ -136,7 +135,7 @@ It operates from a **dedicated 30 V DC power supply** and uses **optical isolati
 
 | Igniter Board (Top View) | Igniter Board (Bottom View) | Installed with DAQ |
 |---------------------------|-----------------------------|--------------------|
-| ![Igniter Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/Igniter_Top.png) | ![Igniter Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/Igniter_Bottom.png) | ![Igniter Assembled](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/Igniter_Assembled.png) |
+| ![Igniter Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Igniter_Top.png) | ![Igniter Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Igniter_Bottom.png) | ![Igniter Assembled](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Igniter_DEFAULT.png) |
 
 ---
 
@@ -152,15 +151,15 @@ Each board is fed by its own transformer, ensuring electrical separation between
 
 | Power Board (Top View) | Power Board (Bottom View) | Installed Setup |
 |-------------------------|---------------------------|-----------------|
-| ![PSU Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/PSU_Top.png) | ![PSU Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/PSU_Bottom.png) | ![PSU Assembled](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/assets/PSU_Assembled.png) |
+| ![PSU Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/POWER_Top.png) | ![PSU Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/POWER_Bottom.png) | ![PSU Assembled](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/POWER_DEFAULT.png) |
 
 ---
 
 ## **System Summary (Updated)**
 
-* ✅ Main DAQ Board: STM32F373, load cell + pressure acquisition, USB isolation, SD, LCD  
-* ✅ Igniter Board: isolated redundant channels, independent 30 V supply, fail-safe relays  
-* ✅ Power Supply Board: independent rectified outputs for DAQ and ignition subsystems  
+*  Main DAQ Board: STM32F373, load cell + pressure acquisition, USB isolation, SD, LCD  
+*  Igniter Board: isolated redundant channels, independent 30 V supply, fail-safe relays  
+*  Power Supply Board: independent rectified outputs for DAQ and ignition subsystems  
 
 This upgraded system improves **safety**, **usability**, and **autonomy**, while keeping the modular architecture suited for rocket engine test benches.
 
