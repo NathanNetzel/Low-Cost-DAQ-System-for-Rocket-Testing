@@ -47,7 +47,7 @@ Both PCBs work together to safely and accurately acquire thrust and chamber pres
 
 ## 🧭 **Block Diagram (Main DAQ Board)**
 
-![Block Diagram](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Low_Cost_DAQ_Hardware_Diagram.png)  
+![Block Diagram](Low_Cost_DAQ_Hardware_Diagram.png)
 *Figure 1: Functional architecture of the main DAQ board, highlighting signal conditioning, communication, and microcontroller connections. Also featured in the [3rd Brazilian Aerospace Congress].*
 
 ---
@@ -56,7 +56,7 @@ Both PCBs work together to safely and accurately acquire thrust and chamber pres
 
 | Main DAQ Board (Top View)                                                                      | Main + Pressure Boards Assembled                                                                | Main Board (Bottom View)                                                                             |
 | ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| ![DAQ Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Low_Cost_DAQ_Main_Board.png) | ![DAQ Stack](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Low_Cost_DAQ_Pressure_Board.png) | ![DAQ Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Low_Cost_DAQ_Bottom_Board.png)   |
+| ![DAQ Top](Low_Cost_DAQ_Main_Board.png) | ![DAQ Stack](Low_Cost_DAQ_Pressure_Board.png) | ![DAQ Bottom](Low_Cost_DAQ_Bottom_Board.png)   |
 
 > *Note: The blue pressure board is mounted on the green DAQ main board using a custom 3D-printed support*
 
@@ -116,7 +116,7 @@ Now, all critical tasks — data collection, igniter activation, and real-time m
 
 | Main DAQ Board (Top View) | Main DAQ Board (Bottom View) | Assembled with LCD + SD |
 |----------------------------|------------------------------|--------------------------|
-| ![DAQ Updated Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/DAQ_UPDATED_TOP.png) | ![DAQ Updated Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/DAQ_UPDATED_BOTTOM.png) | ![DAQ LCD](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/DAQ_UPDATED_DEFAULT.png) |
+| ![DAQ Updated Top](DAQ_UPDATED_TOP.png) | ![DAQ Updated Bottom](DAQ_UPDATED_BOTTOM.png) | ![DAQ LCD](DAQ_UPDATED_DEFAULT.png) |
 
 ---
 
@@ -135,7 +135,7 @@ It operates from a **dedicated 30 V DC power supply** and uses **optical isolati
 
 | Igniter Board (Top View) | Igniter Board (Bottom View) | Installed with DAQ |
 |---------------------------|-----------------------------|--------------------|
-| ![Igniter Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Igniter_Top.png) | ![Igniter Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Igniter_Bottom.png) | ![Igniter Assembled](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/Igniter_DEFAULT.png) |
+| ![Igniter Top](Igniter_Top.png) | ![Igniter Bottom](Igniter_Bottom.png) | ![Igniter Assembled](Igniter_DEFAULT.png) |
 
 ---
 
@@ -151,7 +151,7 @@ Each board is fed by its own transformer, ensuring electrical separation between
 
 | Power Board (Top View) | Power Board (Bottom View) | Installed Setup |
 |-------------------------|---------------------------|-----------------|
-| ![PSU Top](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/POWER_Top.png) | ![PSU Bottom](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/POWER_Bottom.png) | ![PSU Assembled](https://github.com/NathanNetzel/Low-Cost-DAQ-System-for-Rocket-Testing/POWER_DEFAULT.png) |
+| ![PSU Top](POWER_Top.png) | ![PSU Bottom](POWER_Bottom.png) | ![PSU Assembled](POWER_DEFAULT.png) |
 
 ---
 
