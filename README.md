@@ -34,74 +34,6 @@ Both versions are described below in detail.
 
 ---
 
-### Original Version (2024) - STM32F373-Based Dual-PCB Acquisition System
-
-## **Overview**
-
-This system is composed of two stacked PCBs, integrated in a 3D-printed frame:
-
-* **Main DAQ Board**: Handles microcontroller logic, load cell signal conditioning, and serial communication  
-* **Pressure Acquisition Board**: Mounted above, adds pressure sensor interface and protection circuitry
-
-Both PCBs work together to safely and accurately acquire thrust and chamber pressure data during motor tests.
-
----
-
-## **Key Features**
-
-* STM32F373VCT6 microcontroller (16-bit Sigma-Delta ADCs with programmable gain)  
-* Load cell signal conditioning using PGA308 programmable gain amplifier  
-* Pressure signal acquisition with current-to-voltage conversion and TSV911 buffer  
-* RS-232 serial interface (optocoupled) for PC communication via LabVIEW  
-* Overvoltage protection for sensor interfaces  
-* Modular design for reusability and testing flexibility  
-* 3D-printed support structure for mechanical integration
-
-## **Applications**
-
-* Thrust and chamber pressure measurement in hybrid and solid rocket motor tests  
-* Real-time data acquisition with graphical interface (LabVIEW)  
-* Educational laboratory experiments involving signal conditioning  
-* Fault-tolerant analog data logging with overvoltage resilience
-
----
-
-## 🧭 **Block Diagram (Main DAQ Board)**
-
-![Block Diagram](Images/Low_Cost_DAQ_Hardware_Diagram.png)
-*Figure 1: Functional architecture of the main DAQ board, highlighting signal conditioning, communication, and microcontroller connections. Also featured in the [3rd Brazilian Aerospace Congress].*
-
----
-
-## 🖼️ **Hardware Photos**
-
-| Main DAQ Board (Top View)                                                                      | Main + Pressure Boards Assembled                                                                | Main Board (Bottom View)                                                                             |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| ![DAQ Top](Images/Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](Images/Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](Images/Low_Cost_DAQ_Bottom_Board.JPG)   |
-
-> *Note: The blue pressure board is mounted on the green DAQ main board using a custom 3D-printed support*
-
----
-
-## **System Architecture Summary**
-
-### Main DAQ Board
-
-* STM32F373VCT6 MCU with internal Sigma-Delta ADCs  
-* PGA308 gain amplifier for load cell  
-* RS-232 communication via optocoupler  
-* Solder Pad for stacked pressure board  
-* Debug and power connectors
-
-### Pressure Board
-
-* Current-to-voltage conversion (4–20 mA)  
-* TSV911 buffer for ADC interfacing  
-* Overvoltage protection  
-* Simple analog interface to main board
-
----
-
 # 🔄 Updated Version (2025)
 
 ### STM32F373-Based Integrated DAQ System with Ignition and Power Boards
@@ -183,6 +115,74 @@ Each board is fed by its own transformer, ensuring electrical separation between
 *  Power Supply Board: independent rectified outputs for DAQ and ignition subsystems  
 
 This upgraded system improves **safety**, **usability**, and **autonomy**, while keeping the modular architecture suited for rocket engine test benches.
+
+---
+
+### Original Version (2024) - STM32F373-Based Dual-PCB Acquisition System
+
+## **Overview**
+
+This system is composed of two stacked PCBs, integrated in a 3D-printed frame:
+
+* **Main DAQ Board**: Handles microcontroller logic, load cell signal conditioning, and serial communication  
+* **Pressure Acquisition Board**: Mounted above, adds pressure sensor interface and protection circuitry
+
+Both PCBs work together to safely and accurately acquire thrust and chamber pressure data during motor tests.
+
+---
+
+## **Key Features**
+
+* STM32F373VCT6 microcontroller (16-bit Sigma-Delta ADCs with programmable gain)  
+* Load cell signal conditioning using PGA308 programmable gain amplifier  
+* Pressure signal acquisition with current-to-voltage conversion and TSV911 buffer  
+* RS-232 serial interface (optocoupled) for PC communication via LabVIEW  
+* Overvoltage protection for sensor interfaces  
+* Modular design for reusability and testing flexibility  
+* 3D-printed support structure for mechanical integration
+
+## **Applications**
+
+* Thrust and chamber pressure measurement in hybrid and solid rocket motor tests  
+* Real-time data acquisition with graphical interface (LabVIEW)  
+* Educational laboratory experiments involving signal conditioning  
+* Fault-tolerant analog data logging with overvoltage resilience
+
+---
+
+## 🧭 **Block Diagram (Main DAQ Board)**
+
+![Block Diagram](Images/Low_Cost_DAQ_Hardware_Diagram.png)
+*Figure 1: Functional architecture of the main DAQ board, highlighting signal conditioning, communication, and microcontroller connections. Also featured in the [3rd Brazilian Aerospace Congress].*
+
+---
+
+## 🖼️ **Hardware Photos**
+
+| Main DAQ Board (Top View)                                                                      | Main + Pressure Boards Assembled                                                                | Main Board (Bottom View)                                                                             |
+| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| ![DAQ Top](Images/Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](Images/Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](Images/Low_Cost_DAQ_Bottom_Board.JPG)   |
+
+> *Note: The blue pressure board is mounted on the green DAQ main board using a custom 3D-printed support*
+
+---
+
+## **System Architecture Summary**
+
+### Main DAQ Board
+
+* STM32F373VCT6 MCU with internal Sigma-Delta ADCs  
+* PGA308 gain amplifier for load cell  
+* RS-232 communication via optocoupler  
+* Solder Pad for stacked pressure board  
+* Debug and power connectors
+
+### Pressure Board
+
+* Current-to-voltage conversion (4–20 mA)  
+* TSV911 buffer for ADC interfacing  
+* Overvoltage protection  
+* Simple analog interface to main board
 
 ---
 
