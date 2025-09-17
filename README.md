@@ -1,9 +1,13 @@
 # Low-Cost-DAQ-System-for-Rocket-Testing
 
-### STM32F373-Based Dual-PCB Acquisition System
+This repository documents the development of a **low-cost modular data acquisition system (DAQ)** for static fire tests of small rocket engines.  
 
-Hardware project for a modular data acquisition system (DAQ) designed for static fire tests of small rocket engines.  
-Built around a precision STM32F373 microcontroller with integrated Sigma-Delta ADCs and analog signal conditioning for both load cell and pressure sensor measurements.
+The project was carried out in **two main versions**:
+
+1. **Original Version (Dual-PCB)** — academic prototype composed of two stacked boards (DAQ + Pressure), designed to validate the concept and prove feasibility.  
+2. **Updated Version (Integrated + Ignition + Power Boards)** — redesigned for robustness, autonomy, and potential commercial use, integrating pressure acquisition into the main board and adding safety, logging, and user interface improvements.  
+
+Both versions are described below in detail.
 
 ---
 
@@ -29,6 +33,8 @@ Built around a precision STM32F373 microcontroller with integrated Sigma-Delta A
 - **Fully standalone operation**: complete test execution without a PC, controlled only by the user button, LEDs, buzzer, and LCD touchscreen  
 
 ---
+
+### Original Version (2024) - STM32F373-Based Dual-PCB Acquisition System
 
 ## **Overview**
 
@@ -129,9 +135,9 @@ Now, all critical tasks — data collection, igniter activation, and real-time m
 
 ## 🖼️ **Updated Hardware Photos**
 
-| Main DAQ Board (Top View) | Main DAQ Board (Bottom View) | Assembled with LCD + SD |
+| Main DAQ Board (Default View) | Main DAQ Board (Top View) | Main DAQ Board (Bottom View) |
 |----------------------------|------------------------------|--------------------------|
-| ![DAQ Updated Top](Images/DAQ_UPDATED_TOP.png) | ![DAQ Updated Bottom](Images/DAQ_UPDATED_BOTTOM.png) | ![DAQ LCD](Images/DAQ_UPDATED_DEFAULT.png) |
+| ![DAQ Updated Default](Images/DAQ_UPDATED_DEFAULT.JPG) | ![DAQ Updated Top](Images/DAQ_UPDATED_TOP.JPG) | ![DAQ Updated Bottom](Images/DAQ_UPDATED_BOTTOM.JPG) |
 
 ---
 
@@ -148,9 +154,9 @@ It operates from a **dedicated 30 V DC power supply** and uses **optical isolati
 * Fail-safe design: both igniter terminals remain shorted to ground when relay is off  
 * Output LEDs indicate when a channel is energized (⚠️ load must not be connected when LED is on)  
 
-| Igniter Board (Top View) | Igniter Board (Bottom View) | Installed with DAQ |
+| Igniter Board (Default View) | Igniter Board (Top View) | Igniter Board (Bottom View) |
 |---------------------------|-----------------------------|--------------------|
-| ![Igniter Top](Images/IGNITER_TOP.png) | ![Igniter Bottom](Images/IGNITER_BOTTOM.png) | ![Igniter Assembled](Images/IGNITER_DEFAULT.png) |
+| ![Igniter Default](Images/IGNITER_DEFAULT.JPG) | ![Igniter Top](Images/IGNITER_TOP.JPG) | ![Igniter Bottom](Images/IGNITER_BOTTOM.JPG) |
 
 ---
 
@@ -164,9 +170,9 @@ Each board is fed by its own transformer, ensuring electrical separation between
 * Rectifier bridge with filtering capacitors  
 * Individual modules used for DAQ and Igniter supply  
 
-| Power Board (Top View) | Power Board (Bottom View) | Installed Setup |
+| Power Board (Default View) | Power Board (Top View) | Power Board (Bottom View) |
 |-------------------------|---------------------------|-----------------|
-| ![PSU Top](Images/POWER_TOP.png) | ![PSU Bottom](Images/POWER_BOTTOM.png) | ![PSU Assembled](Images/POWER_DEFAULT.png) |
+| ![PSU Default](Images/POWER_DEFAULT.JPG) | ![PSU Top](Images/POWER_TOP.JPG) | ![PSU Bottom](Images/POWER_BOTTOM.JPG) |
 
 ---
 
