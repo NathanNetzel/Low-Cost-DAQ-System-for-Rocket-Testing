@@ -7,11 +7,26 @@ Built around a precision STM32F373 microcontroller with integrated Sigma-Delta A
 
 ---
 
-## 🔥 Highlights  
-- Fully standalone operation (LCD, SD, user button — no PC required)  
-- Integrated thrust & pressure acquisition (STM32F373, PGA308)  
+## 🔥 Highlights
+- Compatible with virtually any load cell and 4–20 mA transducer  
+- Integrated thrust & pressure acquisition (STM32F373, PGA308) 
+- Fully standalone operation (LCD, SD, user button — no PC required) 
+- Redundant data logging (SD, isolated USB, isolated RS-232, LCD) 
 - Safe igniter activation with isolated redundant channels  
 - Modular design: DAQ, Igniter, and Power Boards  
+
+---
+
+## 🔥 Highlights (Detailed)
+
+- **Universal compatibility**: works with virtually any load cell through the programmable PGA308 (gain 2.66–9600, offset adjustment, four-stage conditioning) — no hardware changes required  
+- **Pressure acquisition ready**: direct support for standard 4–20 mA industrial pressure transducers with conversion and buffering  
+- **Expandable design**: 14-pin expansion connector exposing ADCs, DACs, Sigma-Delta channels, and GPIOs for custom sensor/actuator integration  
+- **High-resolution measurements**: three integrated 16-bit Sigma-Delta ADCs on the STM32F373 ensure stable and precise data acquisition  
+- **Built-in safety & fault detection**: PGA308 error reporting, voltage limiting, and input protection safeguard both sensors and ADCs under harsh test conditions  
+- **Redundant & safe data logging**: parallel storage on SD card, real-time transmission via isolated RS-232 and isolated USB interfaces, plus immediate visualization on the LCD display  
+- **Safe igniter activation**: optically isolated redundant channels with fail-safe relays and dedicated signaling for maximum operational safety  
+- **Fully standalone operation**: complete test execution without a PC, controlled only by the user button, LEDs, buzzer, and LCD touchscreen  
 
 ---
 
@@ -186,7 +201,7 @@ No license is currently applied. Please contact the author for collaboration or 
 
 - **A Versatile Low-Cost Data Acquisition System for Small Rocket Engine Test Bench**  
   *HardwareX, Elsevier, 2025*.  
-  [Link to article (forthcoming, current issue)]()
+  [Link to article (https://www.sciencedirect.com/science/article/pii/S2468067225000641)]()
 
 - **DART – A Low-Cost Data Acquisition System for Small Rocket Motor Testing**  
   *III Brazilian Aerospace Congress (IIICAB)*, Brasília, Brazil, September 22–24, 2025.  
