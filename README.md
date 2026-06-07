@@ -1,221 +1,261 @@
 # Low-Cost-DAQ-System-for-Rocket-Testing
 
-This repository documents the development of a **low-cost modular data acquisition system (DAQ)** for static fire tests of small rocket engines.  
+This repository serves as a documentation hub for the development of a **low-cost modular data acquisition system (DAQ)** designed for static fire testing of small rocket motors.
 
-The project was carried out in **two main versions**:
+The project encompasses the complete development cycle of embedded hardware, firmware, signal conditioning, ignition control, data acquisition, and experimental validation. It was developed as an affordable alternative to commercial aerospace test systems and experimentally validated during real rocket motor firing campaigns.
 
-1. **Original Version (Dual-PCB)** — academic prototype composed of two stacked boards (DAQ + Pressure), designed to validate the concept and prove feasibility.  
-2. **Updated Version (Integrated + Ignition + Power Boards)** — redesigned for robustness, autonomy, and potential commercial use, integrating pressure acquisition into the main board and adding safety, logging, and user interface improvements.  
+The work resulted in peer-reviewed publications, open-access experimental datasets, and a modular hardware platform suitable for research, education, and aerospace development activities.
 
-Both versions are described below in detail.
+This repository provides:
 
----
-
-## 🔥 Highlights
-- Compatible with virtually any load cell and 4–20 mA transducer  
-- Integrated thrust & pressure acquisition (STM32F373, PGA308) 
-- Fully standalone operation (LCD, SD, user button — no PC required) 
-- Redundant data logging (SD, isolated USB, isolated RS-232, LCD) 
-- Safe igniter activation with isolated redundant channels  
-- Modular design: DAQ, Igniter, and Power Boards  
+* Hardware architecture documentation
+* PCB photographs and block diagrams
+* Experimental validation results
+* Links to scientific publications
+* Access to open-access datasets
+* References to embedded drivers used throughout the project
 
 ---
 
-## 🔥 Highlights (Detailed)
+# 📚 Repository Resources
 
-- **Universal compatibility**: works with virtually any load cell through the programmable PGA308 (gain 2.66–9600, offset adjustment, four-stage conditioning) — no hardware changes required  
-- **Pressure acquisition ready**: direct support for standard 4–20 mA industrial pressure transducers with conversion and buffering  
-- **Expandable design**: 14-pin expansion connector exposing ADCs, DACs, Sigma-Delta channels, and GPIOs for custom sensor/actuator integration  
-- **High-resolution measurements**: three integrated 16-bit Sigma-Delta ADCs on the STM32F373 ensure stable and precise data acquisition  
-- **Built-in safety & fault detection**: PGA308 error reporting, voltage limiting, and input protection safeguard both sensors and ADCs under harsh test conditions  
-- **Redundant & safe data logging**: parallel storage on SD card, real-time transmission via isolated RS-232 and isolated USB interfaces, plus immediate visualization on the LCD display  
-- **Safe igniter activation**: optically isolated redundant channels with fail-safe relays and dedicated signaling for maximum operational safety  
-- **Fully standalone operation**: complete test execution without a PC, controlled only by the user button, LEDs, buzzer, and LCD touchscreen  
+## Publications
+
+### HardwareX (Elsevier)
+
+**A Versatile Low-Cost Data Acquisition System for Small Rocket Engine Test Bench**
+
+https://www.sciencedirect.com/science/article/pii/S2468067225000641
+
+### III Brazilian Aerospace Congress (CAB)
+
+**DART – A Low-Cost Data Acquisition System for Small Rocket Motor Testing**
+
+https://www.even3.com.br/anais/iii-congresso-aeroespacial-brasileiro/1443161-dart--a-low-cost-data-acquisition-system-for-small-rocket-motor-testing
+
+---
+
+## Open Access Dataset
+
+The complete experimental dataset, supplementary documentation, and validation data are publicly available through Mendeley Data:
+
+https://doi.org/10.17632/c2w7759sd3.2
+
+### License
+
+Creative Commons Attribution Non Commercial 4.0 International (CC BY-NC 4.0)
+
+Users are free to share, adapt, and build upon the material for non-commercial purposes, provided appropriate attribution is given.
+
+---
+
+# 🚀 Project Overview
+
+The system was developed through two hardware generations.
+
+### Generation 1 (2024)
+
+Academic proof-of-concept composed of two stacked PCBs:
+
+* Main DAQ Board
+* Pressure Acquisition Board
+
+This version validated the acquisition architecture, sensor conditioning circuits, and communication framework.
+
+### Generation 2 (2025)
+
+Fully redesigned standalone platform composed of:
+
+* Integrated DAQ Board
+* Igniter Activation Board
+* Power Supply Board
+
+This version integrated pressure acquisition into the main board and added data logging, user interface, ignition control, and safety features for autonomous operation.
+
+---
+
+# ⭐ Key Features
+
+* Compatible with virtually any load cell
+* Compatible with standard 4–20 mA industrial pressure transducers
+* Integrated thrust and chamber pressure acquisition
+* STM32F373 microcontroller with three 16-bit Sigma Delta ADCs
+* Programmable PGA308 signal conditioning
+* Standalone operation without requiring a PC
+* SD card data logging
+* Isolated USB and RS-232 communication
+* Touchscreen LCD interface
+* Safe igniter activation with redundant isolated channels
+* Expansion connector for custom sensors and actuators
+* Modular architecture for research and educational environments
+
+---
+
+# 📈 Experimental Validation
+
+The developed DAQ was experimentally characterized and compared against the commercial acquisition system previously used by the Vector II Rocketry Project.
+
+Commercial reference system:
+
+* National Instruments USB-6221
+* JY-S60 load cell amplifier
+
+### Key Results
+
+* Hardware cost below USD 80
+* More than 20× lower cost than the commercial solution
+* Noise performance within approximately 10% of the commercial setup when normalized by excitation voltage
+* Stable operation during static fire campaigns
+* Successful validation under nominal and motor failure conditions
+* Measurement quality suitable for aerospace research applications
+
+These results demonstrated that a carefully designed low-cost platform can achieve performance comparable to significantly more expensive commercial alternatives.
 
 ---
 
 # 🔄 Updated Version (2025)
 
-### STM32F373-Based Integrated DAQ System with Ignition and Power Boards
+## STM32F373-Based Integrated DAQ System
 
-An updated version of the low-cost data acquisition system has been developed.  
-While maintaining the same core architecture (STM32F373, load cell conditioning, and modularity), the new design integrates **pressure acquisition into the main board** and adds multiple new features for usability, safety, and flexibility during rocket motor testing.  
+The second-generation system was designed to provide a robust and fully standalone testing platform.
 
-The **main goal** of this updated version was to produce a **robust, fully standalone system**, capable of performing rocket motor tests **without requiring a PC or external serial interface**.  
-Now, all critical tasks — data collection, igniter activation, and real-time monitoring — can be carried out directly through the **user button, LCD display, SD card logging, LEDs, and buzzer signals**, providing greater autonomy, safety, and reliability during operations.  
+All critical operations, including data acquisition, ignition control, logging, and visualization, can be performed without requiring an external computer.
 
 ---
 
-## **New Features (Main DAQ Board)**
+## Main DAQ Board Features
 
-* **Integrated pressure acquisition** (no separate pressure board required)  
-* **Isolated USB interface** with Micro-USB connector using ADUM3166BRSZ  
-* **SD Card reader** for standalone data logging  
-* **2.4” 240x320 TFT LCD with touchscreen (ILI9341, SPI)** for real-time data visualization  
-* **Protected serial interface** using SN74LVC2T45DCUT to safeguard SD operations  
-* **User interaction & signaling**:  
-  * 4 user-programmable external LEDs  
-  * 3 dedicated power-status LEDs (+3.3V, +5V RS-232, +5V USB)  
-  * User button  
-  * Buzzer for audio feedback  
-* **Load control connectors** for igniter activation (via secondary board)  
-* **Expansion connector** with 14 GPIOs (ADC, DAC, Sigma-Delta, etc.)  
-* **Power input protection** with rectifier bridge  
-* **Improved PCB layout**: reorganized routing, more didactic silkscreen, and compact design  
+* Integrated pressure acquisition
+* SD card logging
+* Isolated USB communication (ADUM3166BRSZ)
+* 2.4" TFT touchscreen display (ILI9341)
+* Protected serial interface
+* User button and buzzer
+* External status LEDs
+* Expansion connector
+* Power input protection
+* Improved PCB layout and maintainability
 
 ---
 
-## 🖼️ **Updated Hardware Photos**
+## 🖼️ Updated Hardware Photos
 
-| Main DAQ Board (Default View) | Main DAQ Board (Top View) | Main DAQ Board (Bottom View) |
-|----------------------------|------------------------------|--------------------------|
+| Main DAQ Board                                         | Top View                                       | Bottom View                                          |
+| ------------------------------------------------------ | ---------------------------------------------- | ---------------------------------------------------- |
 | ![DAQ Updated Default](Images/DAQ_UPDATED_DEFAULT.JPG) | ![DAQ Updated Top](Images/DAQ_UPDATED_TOP.JPG) | ![DAQ Updated Bottom](Images/DAQ_UPDATED_BOTTOM.JPG) |
 
 ---
 
 ## ⚡ Igniter Activation Board
 
-The **igniter board** ensures safe activation of rocket motor igniters.  
-It operates from a **dedicated 30 V DC power supply** and uses **optical isolation** to decouple control logic from high-current ignition circuits.
+The igniter board provides safe activation of rocket motor igniters through optically isolated control channels.
 
-**Key Points:**
-* Two-channel igniter driver (redundant or independent use)  
-* EL817 optocoupler for signal isolation  
-* G5LE-14-DC24 relay per channel, driven by BC547 transistor  
-* Flyback diodes for coil protection  
-* Fail-safe design: both igniter terminals remain shorted to ground when relay is off  
-* Output LEDs indicate when a channel is energized (⚠️ load must not be connected when LED is on)  
+### Features
 
-| Igniter Board (Default View) | Igniter Board (Top View) | Igniter Board (Bottom View) |
-|---------------------------|-----------------------------|--------------------|
+* Dedicated 30 V supply
+* Optical isolation
+* Two ignition channels
+* Relay-based activation
+* Flyback protection
+* Fail-safe architecture
+* Status indication LEDs
+
+| Igniter Board                                  | Top View                               | Bottom View                                  |
+| ---------------------------------------------- | -------------------------------------- | -------------------------------------------- |
 | ![Igniter Default](Images/IGNITER_DEFAULT.JPG) | ![Igniter Top](Images/IGNITER_TOP.JPG) | ![Igniter Bottom](Images/IGNITER_BOTTOM.JPG) |
 
 ---
 
 ## 🔌 Power Supply Board
 
-A **dedicated power board** provides regulated DC supply to both the DAQ and Igniter modules.  
-Each board is fed by its own transformer, ensuring electrical separation between subsystems.  
+Dedicated power subsystem supplying both DAQ and ignition electronics.
 
-**Features:**
-* AC input via transformer  
-* Rectifier bridge with filtering capacitors  
-* Individual modules used for DAQ and Igniter supply  
+### Features
 
-| Power Board (Default View) | Power Board (Top View) | Power Board (Bottom View) |
-|-------------------------|---------------------------|-----------------|
+* Transformer-based input
+* Rectifier bridge
+* Filtering capacitors
+* Electrical separation between subsystems
+
+| Power Board                              | Top View                         | Bottom View                            |
+| ---------------------------------------- | -------------------------------- | -------------------------------------- |
 | ![PSU Default](Images/POWER_DEFAULT.JPG) | ![PSU Top](Images/POWER_TOP.JPG) | ![PSU Bottom](Images/POWER_BOTTOM.JPG) |
 
 ---
 
-## **System Summary (Updated)**
+# 🧭 Original Version (2024)
 
-*  Main DAQ Board: STM32F373, load cell + pressure acquisition, USB isolation, SD, LCD  
-*  Igniter Board: isolated redundant channels, independent 30 V supply, fail-safe relays  
-*  Power Supply Board: independent rectified outputs for DAQ and ignition subsystems  
+## STM32F373-Based Dual-PCB Architecture
 
-This upgraded system improves **safety**, **usability**, and **autonomy**, while keeping the modular architecture suited for rocket engine test benches.
-
----
-
-### Original Version (2024) - STM32F373-Based Dual-PCB Acquisition System
-
-## **Overview**
-
-This system is composed of two stacked PCBs, integrated in a 3D-printed frame:
-
-* **Main DAQ Board**: Handles microcontroller logic, load cell signal conditioning, and serial communication  
-* **Pressure Acquisition Board**: Mounted above, adds pressure sensor interface and protection circuitry
-
-Both PCBs work together to safely and accurately acquire thrust and chamber pressure data during motor tests.
-
----
-
-## **Key Features**
-
-* STM32F373VCT6 microcontroller (16-bit Sigma-Delta ADCs with programmable gain)  
-* Load cell signal conditioning using PGA308 programmable gain amplifier  
-* Pressure signal acquisition with current-to-voltage conversion and TSV911 buffer  
-* RS-232 serial interface (optocoupled) for PC communication via LabVIEW  
-* Overvoltage protection for sensor interfaces  
-* Modular design for reusability and testing flexibility  
-* 3D-printed support structure for mechanical integration
-
-## **Applications**
-
-* Thrust and chamber pressure measurement in hybrid and solid rocket motor tests  
-* Real-time data acquisition with graphical interface (LabVIEW)  
-* Educational laboratory experiments involving signal conditioning  
-* Fault-tolerant analog data logging with overvoltage resilience
-
----
-
-## 🧭 **Block Diagram (Main DAQ Board)**
-
-![Block Diagram](Images/Low_Cost_DAQ_Hardware_Diagram.png)
-*Figure 1: Functional architecture of the main DAQ board, highlighting signal conditioning, communication, and microcontroller connections. Also featured in the [3rd Brazilian Aerospace Congress].*
-
----
-
-## 🖼️ **Hardware Photos**
-
-| Main DAQ Board (Top View)                                                                      | Main + Pressure Boards Assembled                                                                | Main Board (Bottom View)                                                                             |
-| ---------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
-| ![DAQ Top](Images/Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](Images/Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](Images/Low_Cost_DAQ_Bottom_Board.JPG)   |
-
-> *Note: The blue pressure board is mounted on the green DAQ main board using a custom 3D-printed support*
-
----
-
-## **System Architecture Summary**
+The first-generation system was implemented using two stacked boards mounted through a custom 3D-printed structure.
 
 ### Main DAQ Board
 
-* STM32F373VCT6 MCU with internal Sigma-Delta ADCs  
-* PGA308 gain amplifier for load cell  
-* RS-232 communication via optocoupler  
-* Solder Pad for stacked pressure board  
-* Debug and power connectors
+* STM32F373VCT6
+* PGA308 programmable amplifier
+* Sigma Delta ADC acquisition
+* RS-232 communication
+* Debug and power interfaces
 
 ### Pressure Board
 
-* Current-to-voltage conversion (4–20 mA)  
-* TSV911 buffer for ADC interfacing  
-* Overvoltage protection  
-* Simple analog interface to main board
+* 4–20 mA acquisition
+* TSV911 buffer
+* Overvoltage protection
 
 ---
 
+## Block Diagram
 
-## 📦 **Component Drivers**
+![Block Diagram](Images/Low_Cost_DAQ_Hardware_Diagram.png)
 
-All key embedded drivers used in this system are available on GitHub:
-
-* [PGA308 STM32 HAL Driver](https://github.com/NathanNetzel/PGA308-STM32-HAL-Driver) 
-* [STM32F373 Peripheral Setup (via STM32CubeMX)]()  
+*Figure 1 – Functional architecture of the first-generation DAQ system.*
 
 ---
 
-## ⚠️ Usage Notice
+## Hardware Photos
 
-This repository is for demonstration and academic purposes only.  
-No license is currently applied. Please contact the author for collaboration or reuse.
+| Main DAQ Board                                 | Assembled System                                     | Bottom View                                         |
+| ---------------------------------------------- | ---------------------------------------------------- | --------------------------------------------------- |
+| ![DAQ Top](Images/Low_Cost_DAQ_Main_Board.JPG) | ![DAQ Stack](Images/Low_Cost_DAQ_Pressure_Board.JPG) | ![DAQ Bottom](Images/Low_Cost_DAQ_Bottom_Board.JPG) |
 
----
-
-## 📚 Publications
-
-- **A Versatile Low-Cost Data Acquisition System for Small Rocket Engine Test Bench**  
-  *HardwareX, Elsevier, 2025*.  
-  [Link to article (https://www.sciencedirect.com/science/article/pii/S2468067225000641)]()
-
-- **DART – A Low-Cost Data Acquisition System for Small Rocket Motor Testing**  
-  *III Brazilian Aerospace Congress (IIICAB)*, Brasília, Brazil, September 22–24, 2025.  
-  [Conference Website](https://cab.unb.br/)
+> The pressure acquisition board is mounted above the main DAQ board using a custom 3D-printed support structure.
 
 ---
 
-## **Author**
+# 📦 Embedded Drivers
 
-Nathan Netzel  
-Electrical Engineering Student — Londrina State University
+Several open-source drivers developed during this project are available in separate repositories.
+
+## Available Drivers
+
+* [PGA308 STM32 HAL Driver](https://github.com/NathanNetzel/PGA308-STM32-HAL-Driver)  
+  Driver for the Texas Instruments PGA308 programmable signal conditioner used for load cell amplification and calibration.
+
+Additional sensor and peripheral drivers developed throughout the project will be referenced here as they become publicly available.
+
+---
+
+# 📖 Citation
+
+If this repository, dataset, or associated publications contribute to your work, please cite the corresponding HardwareX publication.
+
+---
+
+## Author
+
+Nathan Netzel
+
+Electrical Engineering Student
+State University of Londrina (UEL)
+
+
+
+
+
+
+
+
+
+
+
